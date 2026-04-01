@@ -1,0 +1,46 @@
+{
+  "name": "products-mfe",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3006",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3006",
+    "lint": "eslint .",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@rangeldor/cindle-design-system": "latest",
+    "@tanstack/react-query": "^5.0.0",
+    "axios": "^1.7.0",
+    "clsx": "^2.1.0",
+    "nuqs": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^6.30.3",
+    "react-router-dom": "^6.30.3",
+    "tailwind-merge": "^2.5.0",
+    "zod": "^3.23.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@module-federation/vite": "latest",
+    "@tailwindcss/vite": "^4.0.0",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "^14.5.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "eslint": "^9.0.0",
+    "jsdom": "latest",
+    "prettier": "^3.3.0",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^6.0.0",
+    "vitest": "latest"
+  }
+}
