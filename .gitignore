@@ -1,0 +1,7 @@
+.__mf__temp/
+.env
+.mf/
+.npmrc
+dist/
+node_modules/
+products-mfe.log
