@@ -3,7 +3,7 @@ import { ProductCardHost } from './ProductCardHost'
 import { Skeleton } from '@rangeldor/cindle-design-system'
 
 export function ProductListHost() {
-  const { data, isLoading, error } = useProducts()
+  const { products, isLoading, error } = useProducts()
 
   if (isLoading) {
     return (
@@ -23,7 +23,7 @@ export function ProductListHost() {
     )
   }
 
-  if (!data?.products?.length) {
+  if (!products?.length) {
     return (
       <div className="text-center py-8 text-muted-foreground">
         Nenhum produto encontrado.
@@ -33,7 +33,7 @@ export function ProductListHost() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {data.products.map((product) => (
+      {products.map((product) => (
         <ProductCardHost key={product.id} product={product} />
       ))}
     </div>
