@@ -6,26 +6,17 @@ const api = axios.create({
 })
 
 export const productsApi = {
-  getProducts: async (filters?: ProductFilters): Promise<Product[]> => {
-    const response = await api.get('/products', { params: filters })
-    const data = response?.data
-
-    // Support two response shapes:
-    // 1) { products: Product[] }
-    // 2) Product[]
-    if (Array.isArray(data)) return data
-    if (data && Array.isArray((data as any).products)) return (data as any).products
-
-    // If response shape is unexpected, return empty array to avoid breaking UI
-    return []
+  async getProducts(filters?: ProductFilters): Promise<Product[]> {
+    const { data } = await api.get<Product[]>('/products', { params: filters })
+    return data
   },
 
-  getProductById: async (id: string): Promise<Product> => {
+  async getProductById(id: string): Promise<Product> {
     const { data } = await api.get<Product>(`/products/${id}`)
     return data
   },
 
-  getCategories: async (): Promise<string[]> => {
+  async getCategories(): Promise<string[]> {
     const { data } = await api.get<string[]>('/products/categories')
     return data
   },
