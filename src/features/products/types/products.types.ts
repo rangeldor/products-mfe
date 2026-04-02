@@ -3,17 +3,11 @@ export interface Product {
   name: string
   description: string
   price: number
-  image: string
-  category: string
   stock: number
+  categoryId: string
+  imageUrl: string
   createdAt: string
-}
-
-export interface ProductsResponse {
-  products: Product[]
-  total: number
-  page: number
-  pageSize: number
+  updatedAt: string
 }
 
 export interface ProductFilters {
@@ -21,5 +15,4 @@ export interface ProductFilters {
   category?: string[]
   minPrice?: number
   maxPrice?: number
-  page?: number
 }

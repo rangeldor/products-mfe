@@ -29,7 +29,7 @@ export function ProductDetail({ productId }: ProductDetailProps) {
   return (
     <div className="grid md:grid-cols-2 gap-8">
       <img
-        src={product.image}
+        src={product.imageUrl}
         alt={product.name}
         className="w-full rounded-lg"
       />
@@ -41,11 +41,10 @@ export function ProductDetail({ productId }: ProductDetailProps) {
         <p className="text-muted-foreground">{product.description}</p>
         <div className="flex gap-4">
           <span className="px-3 py-1 bg-muted rounded-full text-sm">
-            {product.category}
+            {product.categoryId}
           </span>
-          <span className={`px-3 py-1 rounded-full text-sm ${
-            product.stock > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-          }`}>
+          <span className={`px-3 py-1 rounded-full text-sm ${product.stock > 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+            }`}>
             {product.stock > 0 ? `${product.stock} em estoque` : 'Esgotado'}
           </span>
         </div>

@@ -10,7 +10,7 @@ export function ProductCardHost({ product, basePath = '/produtos' }: ProductCard
   return (
     <div className="border rounded-lg overflow-hidden">
       <img
-        src={product.image}
+        src={product.imageUrl}
         alt={product.name}
         className="w-full h-48 object-cover"
       />

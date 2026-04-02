@@ -1,9 +1,10 @@
 import { useProducts } from './features/products/hooks/useProducts'
 import { ProductCardHost } from './features/products/components/ProductCardHost'
 import { Skeleton } from '@rangeldor/cindle-design-system'
+import { Product } from './features/products/types/products.types'
 
 function ProductsApp() {
-  const { data, isLoading, error } = useProducts()
+  const { products, isLoading, error } = useProducts()
 
   if (isLoading) {
     return (
@@ -25,7 +26,7 @@ function ProductsApp() {
     )
   }
 
-  if (!data?.products.length) {
+  if (!products?.length) {
     return (
       <div className="text-center py-8 text-muted-foreground">
         Nenhum produto encontrado.
@@ -37,7 +38,7 @@ function ProductsApp() {
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-6">Produtos</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.products.map((product) => (
+        {products.map((product: Product) => (
           <ProductCardHost key={product.id} product={product} basePath="/produtos" />
         ))}
       </div>
