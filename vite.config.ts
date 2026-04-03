@@ -26,9 +26,7 @@ export default defineConfig({
       name: 'products',
       filename: 'remoteEntry.js',
       exposes: {
-        './ProductList': './src/features/products/components/ProductListHost.tsx',
-        './ProductCard': './src/features/products/components/ProductCardHost.tsx',
-        './ProductsPage': './src/features/products/pages/ProductsPageHost.tsx',
+        './ProductsPage': './src/exports/ProductsPage.ts',
         './NuqsAdapter': './src/exports/NuqsAdapter.ts',
       },
       shared: {
